@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.container .box {
+    position: absolute;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    bottom: 50%;
+    margin: -300px;
+    border: 1px solid #999;
+    /* background: violet; */
+}
+.container .box .title {
+    text-align: center;
+    padding-bottom: 30px;
+    font-size: 25px;
+}
+.container .box .join {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    transform: translateX(-25%);
+}
+.container .box .join .join_int input {
+    width: 450px;
+    height: 30px;
+    border-radius: 13px;
+    
+}
+input:focus {
+    outline: none;
+}
+.container .box .join .btn {
+    margin-top: 40px;
+}
+.container .box .join .btn button {
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 13px;
+    /* box-shadow: none; */
+}

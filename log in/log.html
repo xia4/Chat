@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./log.css">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+        </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="title">
+                <h1>sender</h1>
+            </div>
+            <div class="int">
+                <input type="text" name="id" id="id" autocomplete="on" required>
+                <label for="id">아이디</label>               
+            </div>
+            <div class="int">
+                <input type="password" name="pw" id="pw" autocomplete="on" required>
+                <label for="pw">비밀번호</label>               
+            </div>
+            <div class="btn">
+                <button type="submit">로그인</button>
+            </div>
+            <!-- <div class="check">
+                <input type="checkbox" name="log" id="log">
+                <label for="log">로그인 상태유지</label>
+            </div> -->
+            <div class="find">
+                <a href="./join.html"><h2>회원가입</h2></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let id = $('#id');
+        let pw = $('#pw');
+        let btn = $('#btn');
+
+
+        $(btn).on('click', function() {
+            if($(id).val() == "") {
+                $(id).next('label').addClass('warning');
+            }
+            else if($(pw).val() == "") {
+                $(pw).next('label').addClass('warning');
+            }
+        })
+    </script>
+</body>
+</html>
