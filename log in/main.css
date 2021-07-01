@@ -1,0 +1,292 @@
+body
+{
+  margin: 0;
+  padding: 0;
+  
+  /* make it look decent enough */
+  /* background: #232323; */
+  /* color: #cdcdcd; */
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+.profile {
+  position: fixed;
+    width: 20%;
+    top: 0;
+    left: 0;
+    bottom: 10%;
+    border: 1px solid #666;
+    box-sizing: border-box;
+    /* background: red; */
+}
+#menuToggle {
+  display: block;
+  position: relative;
+  width: 100%;
+  top: 50px;
+  left: 50px;
+  z-index: 1; /*프로필 레이아웃 위에 쌓을때 쓰인다*/
+}
+#menuToggle a {
+  text-decoration: none; /*밑줄 제거*/
+  color: #232323;
+  transition: color 0.3s ease; /*커서를 놓았을때 자연스럽게 색상 변경*/
+}
+#menuToggle a:hover {
+  color: rgb(184, 77, 184);
+}
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute; 
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /*체크박스를 투명하게해서 보이지않게 하기위해*/
+  z-index: 2; /*프로필 레이아웃과 메뉴 총2개위에 쌓기위해서 */
+}
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative; /*원하는 위치에 배열하기위해*/
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease; /*천천히 불투명해진다 */
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+#menu
+{
+  position: absolute;
+  max-width: 100%;
+  width: 80%;
+  margin: -100px -50px;
+  padding: 50px;
+  padding-top: 40%;
+  padding-bottom: 100%;
+  line-height: 130px; /*글자 사이간격 벌리기*/
+  background: gray;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+#menu li
+{
+  padding: 10px 0;
+  font-size: 25px;
+  
+}
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+.profile .lay {
+  position: absolute;
+  width: 90%;
+  top: 0;
+  left: 5%;
+  bottom: 85%;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+.profile .friend{
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  font-size: 15px;
+  text-align: center;
+  cursor: default;
+}
+.profile .profiles {
+  position: absolute;
+  width: 90%;
+  top: 15%;
+  left: 5%;
+  bottom: 0;
+  overflow: scroll;
+  /* border: 1px solid green; */
+}
+.profile .profiles::-webkit-scrollbar {
+  display: none;
+}
+.profile .profiles .profile_picture {
+  margin-bottom: 15%;
+  margin-left: 5%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+.profile .profiles .profile_picture .picture_max{
+  max-width: 100%;
+  max-height: 100%;
+  width: auto !important;
+  height: auto !important;
+}
+
+.profile .profiles .profile_picture span{
+  font-size: 40px;
+  margin-left: 15%;
+}
+.header {
+  position: fixed;
+  height: 100px;
+  left: 20%;
+  right: 20%;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  background: blue;
+}
+.header .picture {
+  position: absolute;
+  height: 100px;
+  top: 20px;
+  left: 3%;
+  right: 3%;
+  /* border: 1px solid purple; */
+}
+.header .picture span{
+  font-size: 30px;
+  top: 20px;
+  margin-left: 5%;
+  cursor: default;
+}
+.menu {
+  position: fixed;
+  width: 20%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+.menu .menu-lay {
+  position: absolute;
+  width: 90%;
+  top: 15%;
+  left: 5%;
+  bottom: 1%;
+  /* border: 1px solid red; */
+  overflow: scroll;
+}
+.menu .menu-lay::-webkit-scrollbar {
+  display: none;
+}
+.menu .menu-chat {
+  
+  width: 100%;
+  height: 150px;
+  border: 1px solid black;
+  box-sizing: border-box;  
+  margin-bottom: 15%;
+  background: plum;
+  cursor: pointer;
+}
+.menu .menu-lay .picachu-max {
+  max-width: 100%;
+  width: auto !important;
+  height: auto !important;
+  margin-top: 10%;
+  margin-left: 3%;
+  float: left;
+}
+.menu .menu-lay .text {
+  text-align: center;
+  line-height: 50px;
+}
+.menu .menu-lay .text span {
+  font-size: 25px;
+}
+.menu .menu-lay .text p {
+  font-size: 30px;
+}
+.chat {
+  position: fixed;
+  width: 60%;
+  top: 100px;
+  left: 20%;
+  right: 20%;
+  bottom: 0%;
+  overflow: hidden;
+  /* border: 1px solid cyan; */
+  box-sizing: border-box;
+  background: rgb(186,184,184);
+  background: linear-gradient(90deg, rgba(186,184,184,1) 50%, rgba(186,184,184,1) 50%);
+}
+.chat .textarea {
+  position: fixed;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  width: 60%;
+  height: 50px;
+  z-index: 99;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  padding-left: 1%;
+  font-weight: 400;
+  font-size: 30px;
+  color: #666;
+}
+.my {
+  position: fixed;
+  width: 20%;
+  top: 90%;
+  left: 0;
+  bottom: 0;
+  border: 1px solid #666;
+  box-sizing: border-box;
+  background: blue;
+}
+.my .my_lay {
+  position: fixed;
+  width: 18%;
+  top: 91%;
+  left: 1%;
+  bottom: 1%;
+  
+  /* border: 1px solid red; */
+}
+.my .my_lay span {
+  font-size: 30px;
+  margin-left: 10%;
+}
+.my .my_lay .profile-max {
+  
+  max-width: 100%;
+  max-height: 100%;
+  width: auto !important;
+  height: auto !important;
+}

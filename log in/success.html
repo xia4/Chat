@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./success.css">
+</head>
+<body onload="window.resizeTo(400,600);">
+    <div class="box">
+        <div class="success">
+            <img src="./success.png" alt="success" width="30px" height="30px" style="vertical-align: middle;">
+            <span>가입성공</span>
+        </div>
+        <div class="join">
+            <h3 class="join_title">
+                <label for="id">가입한 아이디</label>
+            </h3>
+            <span class="join_int">
+                <input type="text" name="id" id="id" value="xia" disabled>
+            </span>
+            <h3 class="join_title">
+                <label for="code">코드</label>
+            </h3>
+            <span class="join_int">
+                <input type="text" name="code" id="code" value="#2235" disabled>
+            </span>
+            <div class="close">
+                <input type="button" value="닫기" onclick="self.close();" />
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>main</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./main.css">
 </head>
 <body>
     <div class="profile">
-        <div class="lay">
-            <div style="position: absolute; top: 40%; left: 10%;" class="list">
-                <img src="./list.png" alt="list" class="list_menu">
+        <nav role="navigation">
+            <div id="menuToggle">
+              <input type="checkbox" />
+        
+              <span></span>
+              <span></span>
+              <span></span>
+        
+              <ul id="menu">
+                <a href="#"><li>친구 추가</li></a>
+                <a href="#"><li>친구 관리</li></a>
+                <a href="#"><li>친구 차단</li></a>
+                </ul>
             </div>
+        </nav>
+          <div class="lay">
             <div class="friend">
                 <h1>친구</h1>
             </div>
-        </div>
+            </div>
         <div class="profiles">
             <div class="profile_picture">
                 <img src="./profile.png" alt="profile_picture" style="vertical-align: middle;" class="picture_max">
@@ -50,7 +62,7 @@
     </div>
     <div class="header">
         <div class="picture">
-            <img src="./profile2.png" alt="profile2" style="vertical-align: middle;">
+            <img src="./profile2.png" alt="profile2" width="60px" height="60px" style="vertical-align: middle;">
             <span>xia</span>
         </div>
     </div>
